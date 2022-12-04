@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: '', component: ProfilesComponent},
   {path: 'profiles', component: ProfilesComponent},
   {path: 'history', component: HistoryComponent},
-  {path: '***', component: ProfilesComponent}
+  {path: '**', redirectTo: '/'}
 ];
 
 @NgModule({
