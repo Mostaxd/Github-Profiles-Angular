@@ -1,5 +1,8 @@
-.profiles{
-  height: 100%;
+.history{
+  min-height: 90vh;
+  width: 100%;
 }
 
-
+.search{
+  height: 38px;
+}
