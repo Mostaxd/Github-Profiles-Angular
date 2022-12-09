@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../services/profile.service';
+import { HistoryService } from '../services/history.service';
+import { Profile } from '../Model/Profile';
 
 @Component({
   selector: 'app-profiles',
@@ -9,10 +11,11 @@ import { ProfileService } from '../services/profile.service';
 export class ProfilesComponent implements OnInit {
 
   search: string = ''
-  profile: any;
+  profile!: Profile;
   showProfile: boolean = false;
 
-  constructor(private profileService: ProfileService) {
+  constructor(private profileService: ProfileService,
+              private historyService: HistoryService) {
   }
 
   ngOnInit(): void {
@@ -21,7 +24,11 @@ export class ProfilesComponent implements OnInit {
 
   getProfile() {
     this.profileService.updateSearchValue(this.search)
-    this.profileService.getProfile().subscribe((profile: any) => this.profile = profile)
+    this.profileService.getProfile().subscribe((profile: any) => {
+      this.profile = profile
+      this.historyService.addToHistory(this.profile)
+    })
+
     this.showProfile = true
   }
 

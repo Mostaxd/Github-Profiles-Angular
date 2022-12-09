@@ -17,19 +17,6 @@
 
 
   <div class="result mt-3" *ngIf="showProfile">
-    <div class="row">
-      <div class="col-md-6 justify-content-center align-items-center d-flex flex-column">
-        <img src="{{profile.avatar_url}}" alt="Profile Picture" height="250px" class="img-responsive rounded">
-        <p>User: {{profile.login}}
-        <p>
-      </div>
-      <div class="col-md-6 mt-5">
-        <h6>Name: {{profile.name}}</h6>
-        <hr>
-        <h6>Company: {{profile.company}}</h6>
-        <hr>
-        <h6>Location: {{profile.location}}</h6>
-        <hr>
-      </div>
+        <app-profile [profile]="profile"></app-profile>
     </div>
   </div>
