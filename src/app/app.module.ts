@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { HistoryComponent } from './history/history.component';
 import { HttpClientModule} from  '@angular/common/http'
-import { FormsModule} from '@angular/forms'
+import { FormsModule} from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfilesComponent,
-    HistoryComponent
+    HistoryComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

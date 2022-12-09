@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Profile } from '../Model/Profile';
+import { HistoryService } from '../services/history.service';
 
 @Component({
   selector: 'app-history',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor() { }
+  profiles: Profile[] = [];
+
+  constructor(private historyService: HistoryService) { }
 
   ngOnInit(): void {
+    this.profiles = this.historyService.getHistory()
+    console.log(this.profiles)
   }
+
+
+
 
 }
